@@ -1,0 +1,71 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.wunder {
+  display: flex;
+  height: 46px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px -20px #000000;
+}
+
+.wunder-logo {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2em;
+  font-family: "Pacifico", cursive;
+}
+
+.wunder-title {
+  color: #000000;
+}
+
+.logo {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.about-page {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+}
+
+.map-page {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+}
+
+.login-page {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+}
+
+.fa-user {
+  color: #000000;
+}
+
+.wunder li > button {
+  font-size: 0.8em;
+  border: 0;
+  background: rgba(19, 20, 20, 1);
+  color: #fff;
+  border-radius: 100px;
+  font-family: "Oswald", sans-serif;
+}
+.wunder li {
+  cursor: pointer;
+}
+.wunder li:hover {
+  color: rgba(73, 156, 215, 0.9);
+}
+
+.wunder li:not(:last-child):not(.wunder-logo) {
+  margin-right: 15px;
+}
+.wunder li a:not(.fa-wunder):not(.login-page):not(.fa-user) {
+  margin-right: 3px;
+}

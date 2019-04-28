@@ -1,0 +1,17 @@
+.wunder-login {
+  font-size: 4em;
+  font-family: "Pacifico", cursive;
+  line-height: 1.4;
+}
+
+.login-style {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.input-style {
+  width: 400px;
+  border-width: normal;
+  border-color: black;
+  margin: 0 auto;
+}

@@ -57,6 +57,14 @@
   line-height: 1.4;
 }
 
+.brand-middle {
+  /* display: flex;
+  flex-direction: column; */
+  /* margin-left: 10rem; */
+  align-items: center;
+  justify-content: center;
+}
+
 .explore {
   background-color: #ffffff;
   color: #000000;
