@@ -6,14 +6,7 @@ import { capitalize } from "../../Utilities/Utilities";
 import "../../Styling/ItemContainer/ItemCard.css";
 
 // FOCUS WORK HERE, THIS IS WHERE WE HANDLE WHERE WE COME FROM TO EXECUTE DIFFERENT COMMANDS
-class Item extends React.Component {
-  state = {
-    name: "",
-    price: "",
-    image_url: "",
-    description: ""
-  };
-
+class ItemCard extends React.Component {
   render() {
     let { name, category, price, image_url, description } = this.props.item;
 
@@ -21,10 +14,10 @@ class Item extends React.Component {
       <React.Fragment>
         <div>
           <div style={{ width: "18rem" }} className="abc-item-card">
-            <Link to={`/items/${this.props.item.id}`}>
+            <Link to={`/main/items/${this.props.item.id}`}>
               <img className="abc-item-image" variant="top" src={image_url} />
             </Link>
-            <h3>{capitalize(name)}</h3>
+            <h3>{name}</h3>
           </div>
         </div>
       </React.Fragment>
@@ -32,4 +25,4 @@ class Item extends React.Component {
   }
 }
 
-export default Item;
+export default ItemCard;

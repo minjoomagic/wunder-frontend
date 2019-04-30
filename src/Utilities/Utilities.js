@@ -1,19 +1,18 @@
-const capitalize = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
+const capitalize = string => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
-const geoCoder = (address) => {
-  let latLng = null
-  const API_KEY = "7RNyAHse9r9wjXT9pJUwBuwAdHnp40KL"
-  const URL = `http://open.mapquestapi.com/geocoding/v1/address?key=${API_KEY}&location=${address}`
+const geoCoder = address => {
+  let latLng = null;
+  const API_KEY = "7RNyAHse9r9wjXT9pJUwBuwAdHnp40KL";
+  const URL = `http://open.mapquestapi.com/geocoding/v1/address?key=${API_KEY}&location=${address}`;
   fetch(URL)
-  .then(resp => resp.json())
-  .then(data => {
-    latLng = data.results[0].locations[0].latLng
-    return latLng
-  })
-
-}
+    .then(resp => resp.json())
+    .then(data => {
+      latLng = data.results[0].locations[0].latLng;
+      return latLng;
+    });
+};
 
 // data.results[0].locations[0].latlng
 // function getAddress(latlng){
@@ -28,4 +27,4 @@ const geoCoder = (address) => {
 //   })
 // }
 
-export {capitalize, geoCoder}
+export { capitalize, geoCoder };

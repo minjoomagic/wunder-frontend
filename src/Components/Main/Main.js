@@ -21,7 +21,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <MainMenu />
+        <MainMenu user={this.props.user} API_ITEM={this.props.API_ITEM} />
       </div>
     );
   }

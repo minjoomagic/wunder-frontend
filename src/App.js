@@ -112,7 +112,6 @@ class App extends React.Component {
 
   render() {
     console.log("logOutHandler", this.logOutHandler);
-    const API_ITEM = "http://localhost:3000/items";
 
     return (
       <div className="App">
@@ -124,13 +123,6 @@ class App extends React.Component {
           user={this.state.user}
         />
         <Switch>
-          <Route
-            path="/items"
-            render={routerProps => (
-              <ItemContainer API_ITEM={API_ITEM} user={this.state.user} />
-            )}
-          />
-
           <Route
             path="/main"
             render={routerProps => (
