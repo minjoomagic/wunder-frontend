@@ -5,6 +5,8 @@ import Signup from "./Components//LogIn-SignUp/SignUp";
 import Login from "./Components//LogIn-SignUp/LogIn";
 import NavBar from "./Components//NavBar/NavBar";
 // import Main from "./Components//Main/Main";
+import ItemContainer from "./Components/ItemContainer/ItemContainer";
+import MainMenu from "./Components/Main/MainMenu";
 
 import "./App.css";
 
@@ -50,7 +52,7 @@ class App extends React.Component {
         localStorage.setItem("token", data.jwt);
         this.setState({ user: data.user }, () => {
           if (this.state.user) {
-            this.props.history.push("/items");
+            this.props.history.push("/main");
           }
         });
       });
@@ -59,6 +61,7 @@ class App extends React.Component {
 
   // ================== HANDLE CREATE USER ================
   onCreateUserHandler = user => {
+    console.log("i am in create user", user);
     let config = {
       method: "POST",
       headers: {
@@ -69,7 +72,7 @@ class App extends React.Component {
         user: {
           username: user.username,
           password: user.password,
-          address: user.address,
+          email: user.email,
           phone_number: user.phoneNumber
         }
       })
@@ -80,30 +83,61 @@ class App extends React.Component {
         console.log("create user fired:", data);
         this.setState({ user: data.user });
         localStorage.setItem("token", data.token);
-        // this.props.history.push("/items");
+        this.props.history.push("/main");
       });
   };
 
   // ================ HANDLE LOGOUT ================
-  logoutHandler = () => {
+  logOutHandler = () => {
     localStorage.removeItem("token");
-    this.props.history.push("/login");
+    this.props.history.push("/");
     this.setState({ user: null });
   };
 
+  // <Route
+  //   path="/items/:id"
+  //   render={routerProps => {
+  //     let id = parseInt(routerProps.match.params.id);
+  //     // console.log("items are:", this.props.items)
+  //     let item = this.props.items.find(item => item.id === id);
+  //     return <ShowPage item={item} />;
+  //   }}
+  // />
+  // <Route
+  //   path="/items"
+  //   render={() => {
+  //     return <div className="item-collection">{items}</div>;
+  //   }}
+  // />
+
   render() {
-    console.log("logoutHandler", this.logoutHandler);
+    console.log("logOutHandler", this.logOutHandler);
+    const API_ITEM = "http://localhost:3000/items";
+
     return (
       <div className="App">
+        <NavBar
+          onLoginHandler={this.onLoginHandler}
+          title="Wunder"
+          color="primary"
+          logOutHandler={this.logOutHandler}
+          user={this.state.user}
+        />
         <Switch>
+          <Route
+            path="/items"
+            render={routerProps => (
+              <ItemContainer API_ITEM={API_ITEM} user={this.state.user} />
+            )}
+          />
+
           <Route
             path="/main"
             render={routerProps => (
               <div>
-                <NavBar
-                  onLoginHandler={this.onLoginHandler}
-                  title="Wunder"
-                  color="primary"
+                <MainMenu
+                  logOutHandler={this.logoutHandler}
+                  user={this.state.user}
                 />
               </div>
             )}
@@ -112,9 +146,7 @@ class App extends React.Component {
             path="/login"
             render={routerProps => (
               <div>
-                <NavBar />
                 <Login
-                  NavBar={NavBar}
                   onLoginHandler={this.onLoginHandler}
                   title="Wunder"
                   color="primary"
@@ -126,7 +158,6 @@ class App extends React.Component {
             path="/signup"
             render={routerProps => (
               <div>
-                <NavBar />
                 <Signup
                   onCreateUserHandler={this.onCreateUserHandler}
                   title="Wunder"
@@ -135,7 +166,7 @@ class App extends React.Component {
               </div>
             )}
           />
-          /* ------ Any other route put above this line ------ */
+          {/* ------ Any other route put above this line ------ */}
           <Route
             path="/"
             render={routerProps => <LandingPage title="Wunder" />}
