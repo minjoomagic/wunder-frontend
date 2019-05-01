@@ -19,7 +19,7 @@ class ShowPage extends React.Component {
         </div>
         <div className="right-side">
           <ItemInfo item={this.props} />
-          <ItemMap location={this.props} />
+          <ItemMap item={this.props} />
         </div>
       </div>
     );

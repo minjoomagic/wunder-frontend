@@ -5,41 +5,53 @@ import { capitalize } from "../../../Utilities/Utilities";
 
 class ItemInfo extends React.Component {
   state = {
-    description: false
+    category: false,
+    address: false
   };
 
-  clickDescriptionHandler = () => {
-    this.setState({ description: !this.state.description });
+  clickCategoryHandler = () => {
+    this.setState({ category: !this.state.category });
+  };
+
+  clickPriceHandler = () => {
+    this.setState({ price: !this.state.price });
   };
 
   render() {
     this.props.item.item
       ? console.log(this.props.item.item.name)
-      : console.log("nada");
+      : console.log("akh");
     console.log("this is my item's info: ", this.props.item.item);
     return (
       <Container className="item-container">
         {this.props.item.item ? (
           <Card className="card-item">
             <i className="fas fa-info-circle fa-5x">
-              <p className="item-name">
-                Name:
-                <br />
-                {this.props.item.item.name}
-              </p>
+              <p className="item-name">Name: {this.props.item.item.name}</p>
             </i>
             <br />
 
             <Button
               variant="light"
-              className="description-button mr-2"
-              onClick={this.clickDescriptionHandler}
+              className="fas fa-mobile-alt mr-2"
+              onClick={this.clickCategoryHandler}
             >
               {" "}
-              Description
+              Category
             </Button>
-            {this.state.description ? (
-              <h3> {this.props.item.item.description}</h3>
+            {this.state.category ? (
+              <h3>Category: {this.props.item.item.category}</h3>
+            ) : null}
+
+            <Button
+              variant="light"
+              className="fas fa-map-marked-alt mr-2"
+              onClick={this.clickPriceHandler}
+            >
+              Price
+            </Button>
+            {this.state.price ? (
+              <h3>Price: ${this.props.item.item.price}</h3>
             ) : null}
           </Card>
         ) : null}

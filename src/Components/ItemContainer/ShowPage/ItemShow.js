@@ -39,9 +39,6 @@ const ItemShow = props => {
             {sold_by}{" "}
           </h3>
         </Card.Text>
-        <Card.Text>
-          <h3>Description: {description}</h3>
-        </Card.Text>
       </Card.Body>
       <Link to={"/main/items"}>
         <Button className="mr-2">Back</Button>
