@@ -114,7 +114,7 @@
   position: absolute;
   left: 0;
   bottom: -100%;
-  transition: all 0.3s;
+  transition: all 1.2s;
   font-family: "Open Sans", sans-serif;
 }
 .item-grid .add-to-fav:hover {

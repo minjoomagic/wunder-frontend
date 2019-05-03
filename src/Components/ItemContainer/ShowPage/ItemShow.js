@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {} from "../../../Utilities/Utilities";
+import { capitalize } from "../../../Utilities/Utilities";
 import { Button, Card } from "react-bootstrap";
 
 // import "../../../Styling/ItemContainer/ShowPage/ItemShow.css";
@@ -31,7 +31,7 @@ const ItemShow = props => {
           <h1>{name}</h1>
         </Card.Title>
         <Card.Text>
-          <h3>Category: {category}</h3>
+          <h3>Category: {capitalize(category)}</h3>
         </Card.Text>
         <Card.Text>
           <h3>

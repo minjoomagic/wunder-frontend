@@ -7,6 +7,7 @@ import NavBar from "./Components//NavBar/NavBar";
 // import Main from "./Components//Main/Main";
 import ItemContainer from "./Components/ItemContainer/ItemContainer";
 import MainMenu from "./Components/Main/MainMenu";
+import ChatsList from "./Components/Chat/ChatsList";
 
 import "./App.css";
 
@@ -122,6 +123,7 @@ class App extends React.Component {
           logOutHandler={this.logOutHandler}
           user={this.state.user}
         />
+        {this.state.user ? <ChatsList /> : null}
         <Switch>
           <Route
             path="/main"

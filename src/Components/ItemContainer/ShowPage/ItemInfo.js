@@ -23,7 +23,7 @@ class ItemInfo extends React.Component {
           <Card className="card-item">
             <i className="fas fa-info-circle fa-5x">
               <p className="item-name">
-                Name:
+                Location:
                 <br />
                 {this.props.item.item.name}
               </p>
@@ -39,7 +39,7 @@ class ItemInfo extends React.Component {
               Description
             </Button>
             {this.state.description ? (
-              <h3> {this.props.item.item.description}</h3>
+              <h5> {this.props.item.item.description}</h5>
             ) : null}
           </Card>
         ) : null}

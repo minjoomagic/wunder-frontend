@@ -48,7 +48,7 @@ class ItemCard extends React.Component {
                     </li>
                   </ul>
                   <a className="add-to-fav" href="">
-                    Add to Favs
+                    Add to Favorites
                   </a>
                 </div>
                 <div className="item-content">
