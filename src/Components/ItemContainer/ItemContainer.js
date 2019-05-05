@@ -17,7 +17,6 @@ const ItemContainer = props => {
         <Route
           path="/main/items/:id"
           render={routerProps => {
-            console.log("#(@#(#(#!(#!#(#())))))");
             let id = parseInt(routerProps.match.params.id);
             console.log("items are:", props.items);
             let item = props.items.find(item => item.id === id);

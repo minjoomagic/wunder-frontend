@@ -7,7 +7,7 @@ ul {
   display: flex;
   height: 46px;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 15px;
   border: 1px solid rgba(238, 238, 238, 1);
   border-radius: 5px;
   box-shadow: 5px 10px 20px -20px #000000;
@@ -76,7 +76,7 @@ ul {
   margin-right: 15px;
 }
 .wunder li a:not(.fa-wunder):not(.login-page):not(.fa-user) {
-  margin-right: 3px;
+  margin-right: 100px;
 }
 
 /* .icon {

@@ -1,5 +1,7 @@
 import React from "react";
 import "../../Styling/NavBar/NavBar.css";
+import "../../Styling/LandingPage/menu.css";
+import "../../Styling/LandingPage/style.css";
 import logo from "../../Images/star.png";
 import { Link } from "react-router-dom";
 import { capitalize } from "../../Utilities/Utilities";
@@ -14,12 +16,7 @@ class NavBar extends React.Component {
       <div>
         <ul className="wunder" role="navigation">
           <li>
-            <a href="/about" className="about-page">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/map" className="map-page">
+            <a href="/storemap" className="map-page">
               Store Map
             </a>
           </li>
@@ -49,7 +46,35 @@ class NavBar extends React.Component {
           </li>
           <li>{this.props.user ? <i className="fas fa-user" /> : null}</li>
           <li>
-            <button>Menu</button>
+            <li className="menu-wrap">
+              <input type="checkbox" className="toggler" />
+              <div className="cool">
+                <div />
+              </div>
+              <div className="menu">
+                <div>
+                  <div>
+                    <ul>
+                      <li>
+                        <a href="/main">Main Menu</a>
+                      </li>
+                      <li>
+                        <a href="/about">About</a>
+                      </li>
+                      <li>
+                        <a href="/login">Login</a>
+                      </li>
+                      <li>
+                        <a href="" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <p>{"empty"}</p>
+            </li>
           </li>
         </ul>
       </div>

@@ -1,0 +1,30 @@
+.map-image {
+  height: auto;
+  width: auto;
+  max-height: 500px;
+  max-width: 500px;
+}
+
+.map-here {
+  height: auto;
+  width: auto;
+  max-height: 100px;
+  max-width: 100px;
+  position: absolute;
+  bottom: 19em;
+  right: 9em;
+}
+
+.aisle-1 {
+  position: absolute;
+  bottom: 10em;
+  right: 7em;
+  color: #ff0800;
+}
+
+.aisle-9 {
+  position: absolute;
+  bottom: 10em;
+  right: 6em;
+  color: #ff0800;
+}

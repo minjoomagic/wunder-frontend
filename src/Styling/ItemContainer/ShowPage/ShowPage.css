@@ -15,6 +15,7 @@
 }
 
 .right-side {
+  background: white;
   flex-grow: 1;
   height: 100vh;
   top: 0;

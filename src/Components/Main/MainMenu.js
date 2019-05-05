@@ -8,6 +8,7 @@ import { Route, Switch } from "react-router";
 import { withRouter } from "react-router-dom";
 import ItemContainer from "../ItemContainer/ItemContainer";
 import ShowPage from "../ItemContainer/ShowPage/ShowPage";
+import ChatsList from "../../Components/Chat/ChatsList";
 
 const API_ITEM = "http://localhost:3000/items";
 const API_RECIPE = "http://localhost:3000/recipes";
@@ -15,7 +16,8 @@ const API_RECIPE = "http://localhost:3000/recipes";
 class MainMenu extends React.Component {
   state = {
     items: [],
-    user: null
+    user: null,
+    searchTerm: ""
   };
 
   // ================= Fetch Data =====================
@@ -39,6 +41,10 @@ class MainMenu extends React.Component {
         );
       });
   };
+
+  // ----------------- Fuzzy Search Items ---------------------
+  submitHandler(searchTerm) {}
+
   render() {
     console.log("this is my user in MainMenu:", this.props.user);
     let items = this.state.items;
@@ -54,6 +60,10 @@ class MainMenu extends React.Component {
                 items={items}
               />
             )}
+          />
+          <Route
+            path="/main/chef"
+            render={routerProps => <ChatsList user={this.props.user} />}
           />
 
           <div className="container-fluid d-flex justify-content-center">
@@ -78,7 +88,7 @@ class MainMenu extends React.Component {
                 image={image3}
                 title="Chef Connect"
                 description="Chat Live with one of our award-winning chefs who can help you make a great meal today!"
-                link="main/chefconnect"
+                link="main/chef"
               />
             </div>
           </div>

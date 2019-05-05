@@ -3,32 +3,32 @@ import { API_ROOT, HEADERS } from "../../Constants";
 
 class NewChatForm extends React.Component {
   state = {
-    title: ""
+    content: ""
   };
 
   handleChange = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ content: e.target.value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    fetch(`${API_ROOT}/chats`, {
+    fetch(`${API_ROOT}/messages`, {
       method: "POST",
       headers: HEADERS,
       body: JSON.stringify(this.state)
     });
-    this.setState({ title: "" });
+    this.setState({ content: "" });
   };
 
   render = () => {
     return (
       <div className="newChatForm">
         <form onSubmit={this.handleSubmit}>
-          <label>New Chat:</label>
+          <label>New Message:</label>
           <br />
           <input
             type="text"
-            value={this.state.title}
+            value={this.state.content}
             onChange={this.handleChange}
           />
           <input type="submit" />

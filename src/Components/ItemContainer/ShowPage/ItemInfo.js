@@ -25,7 +25,7 @@ class ItemInfo extends React.Component {
               <p className="item-name">
                 Location:
                 <br />
-                {this.props.item.item.name}
+                {this.props.item.item.store_items[0].location}
               </p>
             </i>
             <br />

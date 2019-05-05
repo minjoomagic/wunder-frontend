@@ -1,10 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Button, Form, FormControl } from "react-bootstrap";
+import "../../Styling/ItemContainer/SearchBar.css";
 
 class SearchBar extends React.Component {
   state = {
-    searchTerm: ""
+    searchTerm: "",
+    clicked: false
   };
 
   onChangeHandler = e => {
@@ -12,9 +14,13 @@ class SearchBar extends React.Component {
   };
 
   submitHandler = e => {
-    this.props.history.push("/items");
+    // this.props.history.push("/items");
     let searchTerm = this.state.searchTerm;
     this.props.submitHandler(searchTerm);
+  };
+
+  onClickHandler = e => {
+    this.setState({ clicked: !this.state.clicked });
   };
 
   render() {
@@ -25,24 +31,31 @@ class SearchBar extends React.Component {
     //
     return (
       <div>
-        <Form inline>
-          <FormControl
-            onChange={this.onChangeHandler}
-            className="mr-sm-3"
-            type="text"
-            placeholder="Search"
-            name="search"
-            value={this.state.searchTerm}
-          />
-          <Button
-            className="mr-5"
-            variant="outline-dark"
-            onClick={this.submitHandler}
-          >
+        {this.state.clicked ? (
+          <Form inline className="search">
+            <FormControl
+              onChange={this.onChangeHandler}
+              className="search-bar"
+              type="text"
+              placeholder="Search"
+              name="search"
+              value={this.state.searchTerm}
+            />
+            <Button
+              className="mr-5"
+              variant="outline-dark"
+              onClick={this.submitHandler}
+            >
+              {" "}
+              Search{" "}
+            </Button>
+          </Form>
+        ) : (
+          <Button className="mr-5" variant="dark" onClick={this.onClickHandler}>
             {" "}
-            Search{" "}
+            Click to Search{" "}
           </Button>
-        </Form>
+        )}
       </div>
     );
   }

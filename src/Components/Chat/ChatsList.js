@@ -22,6 +22,7 @@ class ChatsList extends React.Component {
   };
 
   handleReceivedChat = response => {
+    console.log("handlechat", response);
     const { chat } = response;
     this.setState({
       chats: [...this.state.chats, chat]
@@ -29,6 +30,7 @@ class ChatsList extends React.Component {
   };
 
   handleReceivedMessage = response => {
+    console.log("handlereceive", response);
     const { message } = response;
     const chats = [...this.state.chats];
     const chat = chats.find(chat => chat.id === message.chat_id);
