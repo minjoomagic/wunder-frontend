@@ -47,9 +47,11 @@ class ItemCard extends React.Component {
                       </Link>
                     </li>
                   </ul>
-                  <a className="add-to-fav" href="">
-                    Add to Favorites
-                  </a>
+                  {this.props.user ? (
+                    <a className="add-to-fav" href="">
+                      Add to Favorites
+                    </a>
+                  ) : null}
                 </div>
                 <div className="item-content">
                   <h3 className="title">

@@ -6,4 +6,7 @@
 }
 
 .search-bar {
+  width: 15em;
+  height: 3em;
+  max-width: 900px;
 }

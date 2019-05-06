@@ -42,10 +42,12 @@ const ItemShow = props => {
       </Card.Body>
       <Link to={"/main/items"}>
         <Button className="mr-2">Back</Button>
-        <Button variant="success" onClick={buyHandler}>
-          {" "}
-          Favorite{" "}
-        </Button>
+        {props.user ? (
+          <Button variant="success" onClick={buyHandler}>
+            {" "}
+            Favorite{" "}
+          </Button>
+        ) : null}
       </Link>
     </Card>
   );

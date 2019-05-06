@@ -9,7 +9,6 @@ const ItemContainer = props => {
   let items = props.items.map(item => (
     <ItemCard key={item.id} item={item} user={props.user} />
   ));
-  console.log("this is my user in ItemCont:", props.user);
 
   return (
     <div>
@@ -25,10 +24,13 @@ const ItemContainer = props => {
         />
         <Route
           path="/main/items"
-          render={() => {
+          render={routerProps => {
             return (
               <div>
-                <SearchBar />
+                <SearchBar
+                  onChangeHandler={props.onChangeHandler}
+                  searchTerm={props.searchTerm}
+                />
                 <div className="item-collection">{items}</div>
               </div>
             );

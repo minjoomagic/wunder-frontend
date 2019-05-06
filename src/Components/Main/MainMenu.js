@@ -10,6 +10,8 @@ import ItemContainer from "../ItemContainer/ItemContainer";
 import ShowPage from "../ItemContainer/ShowPage/ShowPage";
 import ChatsList from "../../Components/Chat/ChatsList";
 
+import SearchBar from "../ItemContainer/SearchBar";
+
 const API_ITEM = "http://localhost:3000/items";
 const API_RECIPE = "http://localhost:3000/recipes";
 
@@ -43,11 +45,25 @@ class MainMenu extends React.Component {
   };
 
   // ----------------- Fuzzy Search Items ---------------------
-  submitHandler(searchTerm) {}
+  onChangeHandler = searchTerm => {
+    console.log("now back in Main", searchTerm);
+    this.setState({ searchTerm: searchTerm });
+  };
+
+  filteredItems = () => {
+    console.log("%c In the FILTERED ITEMS!!!!", "color:blue", this.state.items);
+    return this.state.items.filter(item => {
+      return item.name
+        .toLowerCase()
+        .includes(this.state.searchTerm.toLowerCase());
+    });
+  };
 
   render() {
-    console.log("this is my user in MainMenu:", this.props.user);
+    console.log("what is my state?: ", this.state.searchTerm);
+
     let items = this.state.items;
+
     return (
       <div>
         <Switch>
@@ -57,7 +73,9 @@ class MainMenu extends React.Component {
               <ItemContainer
                 API_ITEM={API_ITEM}
                 user={this.props.user}
-                items={items}
+                items={this.filteredItems()}
+                onChangeHandler={this.onChangeHandler}
+                searchTerm={this.state.searchTerm}
               />
             )}
           />

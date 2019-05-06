@@ -5,18 +5,23 @@ import "../../Styling/ItemContainer/SearchBar.css";
 
 class SearchBar extends React.Component {
   state = {
-    searchTerm: "",
-    clicked: false
+    name: "",
+    clicked: false,
+    searchTerm: ""
   };
 
   onChangeHandler = e => {
-    this.setState({ searchTerm: e.target.value });
-  };
+    this.setState(
+      {
+        searchTerm: e.target.value,
+        clicked: this.state.clicked
+      },
+      () => this.props.onChangeHandler(this.state.searchTerm)
+      // because async the typed letters was lagging by one. By making this an anonymous callback function now in sync.
+    );
 
-  submitHandler = e => {
-    // this.props.history.push("/items");
-    let searchTerm = this.state.searchTerm;
-    this.props.submitHandler(searchTerm);
+    console.log("changing?????", e.target.value);
+    // console.log(e.target.value);
   };
 
   onClickHandler = e => {
@@ -24,31 +29,17 @@ class SearchBar extends React.Component {
   };
 
   render() {
-    //   <Form inline>
-    //     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-    //     <Button variant="outline-light">Search</Button>
-    //   </Form>
-    //
     return (
       <div>
         {this.state.clicked ? (
           <Form inline className="search">
-            <FormControl
+            <input
               onChange={this.onChangeHandler}
               className="search-bar"
               type="text"
               placeholder="Search"
-              name="search"
               value={this.state.searchTerm}
             />
-            <Button
-              className="mr-5"
-              variant="outline-dark"
-              onClick={this.submitHandler}
-            >
-              {" "}
-              Search{" "}
-            </Button>
           </Form>
         ) : (
           <Button className="mr-5" variant="dark" onClick={this.onClickHandler}>
