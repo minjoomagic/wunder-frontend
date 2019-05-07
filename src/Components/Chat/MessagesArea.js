@@ -1,12 +1,16 @@
 import React from "react";
 import NewMessageForm from "./NewMessageForm";
 
-const MessagesArea = ({ conversation: { id, title, messages } }) => {
+const MessagesArea = props => {
+  //
+  console.log("Messages area CHAT props:", props);
+  console.log("Messages area USER props:", props.user);
   return (
     <div className="messagesArea">
-      <h2>{title}</h2>
-      <ul>{orderedMessages(messages)}</ul>
-      <NewMessageForm chat_id={id} />
+      <h2>{props.chat.title}</h2>
+      <h1>{props.user.username}</h1>
+      <ul>{orderedMessages(props.chat.messages)}</ul>
+      <NewMessageForm chat_id={props.chat.id} user={props.user} />
     </div>
   );
 };
