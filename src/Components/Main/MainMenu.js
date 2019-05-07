@@ -12,6 +12,8 @@ import ChatsList from "../../Components/Chat/ChatsList";
 
 import SearchBar from "../ItemContainer/SearchBar";
 
+import Alert from "../../Components/Alert";
+
 const API_ITEM = "http://localhost:3000/items";
 const API_RECIPE = "http://localhost:3000/recipes";
 
@@ -59,9 +61,33 @@ class MainMenu extends React.Component {
     });
   };
 
-  render() {
-    console.log("what is my state?: ", this.state.searchTerm);
+  // ----------------- Favorite Items ---------------------
+  favHandler = favItem => {
+    console.log("back up in main menu", favItem);
+    let user = this.props.user;
 
+    console.log("this is my user:", user);
+    console.log("this is my item:", favItem);
+
+    let config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ user: user, item: favItem })
+    };
+    console.log("this is my item in main:", favItem);
+    fetch(`http://localhost:3000/favorites`, config).then(resp => {
+      if (resp.status === 204) {
+        this.fetchItems();
+        this.props.history.push("/main/items");
+      } else {
+        window.alert("successfully favorited!");
+      }
+    });
+  };
+
+  render() {
     let items = this.state.items;
 
     return (
@@ -76,9 +102,11 @@ class MainMenu extends React.Component {
                 items={this.filteredItems()}
                 onChangeHandler={this.onChangeHandler}
                 searchTerm={this.state.searchTerm}
+                favHandler={this.favHandler}
               />
             )}
           />
+
           <Route
             path="/main/chef"
             render={routerProps => <ChatsList user={this.props.user} />}
@@ -91,23 +119,49 @@ class MainMenu extends React.Component {
                 title="Browse Our Items"
                 description="Browse our 10,000+ items, Search, & even find the Location of an item!"
                 link="/main/items"
+                buttonInfo="Click Here"
               />
             </div>
+
             <div className="col-md-3">
-              <MainMenuCard
-                image={image2}
-                title="Browse Our Recipes"
-                description="Try something new today with our World Class Recipes at your fingertips! "
-                link="main/recipes"
-              />
+              {this.state.user ? (
+                <MainMenuCard
+                  image={image2}
+                  title="Browse Our Recipes"
+                  description="Try something new today with our World Class Recipes at your fingertips! "
+                  link=""
+                  buttonInfo="COMING SOON"
+                />
+              ) : (
+                <MainMenuCard
+                  image={image2}
+                  title="Browse Our Recipes"
+                  description="Try something new today with our World Class Recipes at your fingertips! "
+                  link="/login"
+                  alert="Please Login"
+                  buttonInfo="Login"
+                />
+              )}
             </div>
             <div className="col-md-3">
-              <MainMenuCard
-                image={image3}
-                title="Chef Connect"
-                description="Chat Live with one of our award-winning chefs who can help you make a great meal today!"
-                link="main/chef"
-              />
+              {this.state.user ? (
+                <MainMenuCard
+                  image={image3}
+                  title="Chef Connect"
+                  description="Chat Live with one of our award-winning chefs who can help you make a great meal today!"
+                  link="main/chef"
+                  buttonInfo="Click Here"
+                />
+              ) : (
+                <MainMenuCard
+                  image={image3}
+                  title="Chef Connect"
+                  description="Chat Live with one of our award-winning chefs who can help you make a great meal today!"
+                  link="/login"
+                  alert="Please Login"
+                  buttonInfo="Login"
+                />
+              )}
             </div>
           </div>
         </Switch>

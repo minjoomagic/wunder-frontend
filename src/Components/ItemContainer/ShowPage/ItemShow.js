@@ -17,11 +17,14 @@ const ItemShow = props => {
     sold_by
   } = props.item.item;
 
-  const buyHandler = e => {
+  const favHandler = e => {
     e.preventDefault();
-    console.log("buying this");
-    props.item.buyHandler(props.item.item);
+    console.log("favoriting this", e);
+    console.log("favoriting this2", props.item);
+    props.item.favHandler(props.item);
   };
+
+  console.log("This is my user in ITEMSHOW", props.user);
 
   return (
     <Card className="show-card">
@@ -42,8 +45,8 @@ const ItemShow = props => {
       </Card.Body>
       <Link to={"/main/items"}>
         <Button className="mr-2">Back</Button>
-        {props.user ? (
-          <Button variant="success" onClick={buyHandler}>
+        {props.item.user ? (
+          <Button variant="success" onClick={favHandler}>
             {" "}
             Favorite{" "}
           </Button>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../../Styling/Main/MainMenuCard.css";
+
+import Alert from "../../Components/Alert";
 
 const MainMenuCard = props => {
   return (
@@ -8,11 +11,12 @@ const MainMenuCard = props => {
       <div className="overflow">
         <img src={props.image} alt="" className="card-img-top" />
       </div>
-      <div className="card-body text-dark">
-        <h4 className="card-title">{props.title}</h4>
+      <div className="mainmenu-body text-dark">
+        <h3 className="card-title">{props.title}</h3>
         <p className="card-text text-secondary">{props.description}</p>
+        <h1 className="alert">{props.alert}</h1>
         <Link to={`${props.link}`}>
-          <p className="btn btn-outline-dark">Click Here</p>
+          <p className="btn btn-outline-dark">{props.buttonInfo}</p>
         </Link>
       </div>
     </div>

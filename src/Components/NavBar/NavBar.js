@@ -56,16 +56,16 @@ class NavBar extends React.Component {
                   <div>
                     <ul>
                       <li>
-                        <a href="/">Home Screen</a>
-                      </li>
-                      <li>
-                        <a href="/main">Main Menu</a>
+                        <a href="/favorites">My Favorites</a>
                       </li>
                       <li>
                         <a href="/about">About</a>
                       </li>
                       <li>
                         <a href="/login">Login</a>
+                      </li>
+                      <li>
+                        <a href="/">Home Screen</a>
                       </li>
                       <li>
                         <a href="" />

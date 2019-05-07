@@ -6,8 +6,15 @@ import { capitalize } from "../../Utilities/Utilities";
 import "../../Styling/ItemContainer/ItemCard.css";
 import "../../Styling/ItemContainer/ItemSFX.css";
 
-// FOCUS WORK HERE, THIS IS WHERE WE HANDLE WHERE WE COME FROM TO EXECUTE DIFFERENT COMMANDS
 class ItemCard extends React.Component {
+  favHandler = e => {
+    console.log("EEEEEEEE", e);
+    console.log("props USERRR in itemcards:", this.props.user);
+    console.log("props ITEMSSSS in itemcards:", this.props.item);
+    e.preventDefault();
+    this.props.favHandler(this.props);
+  };
+
   render() {
     let {
       name,
@@ -48,14 +55,16 @@ class ItemCard extends React.Component {
                     </li>
                   </ul>
                   {this.props.user ? (
-                    <a className="add-to-fav" href="">
+                    <a className="add-to-fav" href="" onClick={this.favHandler}>
                       Add to Favorites
                     </a>
                   ) : null}
                 </div>
                 <div className="item-content">
                   <h3 className="title">
-                    <a href={`/main/items/${this.props.item.id}`}>{name}</a>
+                    <Link to={`/main/items/${this.props.item.id}`}>
+                      <p>{name}</p>
+                    </Link>
                   </h3>
                 </div>
               </div>

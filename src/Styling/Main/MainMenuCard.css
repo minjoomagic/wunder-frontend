@@ -1,0 +1,9 @@
+.alert {
+  font-family: "Pacifico", cursive;
+}
+
+.mainmenu-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

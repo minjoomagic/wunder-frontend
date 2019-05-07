@@ -7,7 +7,12 @@ import SearchBar from "./SearchBar";
 
 const ItemContainer = props => {
   let items = props.items.map(item => (
-    <ItemCard key={item.id} item={item} user={props.user} />
+    <ItemCard
+      key={item.id}
+      item={item}
+      user={props.user}
+      favHandler={props.favHandler}
+    />
   ));
 
   return (
@@ -19,7 +24,13 @@ const ItemContainer = props => {
             let id = parseInt(routerProps.match.params.id);
             console.log("items are:", props.items);
             let item = props.items.find(item => item.id === id);
-            return <ShowPage item={item} user={props.user} />;
+            return (
+              <ShowPage
+                item={item}
+                user={props.user}
+                favHandler={props.favHandler}
+              />
+            );
           }}
         />
         <Route

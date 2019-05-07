@@ -9,6 +9,7 @@ import ItemContainer from "./Components/ItemContainer/ItemContainer";
 import MainMenu from "./Components/Main/MainMenu";
 import StoreMap from "./Components/NavBar/StoreMap";
 import About from "./Components/NavBar/About";
+import Favorites from "./Components/NavBar/Favorites";
 
 import "./App.css";
 
@@ -127,6 +128,17 @@ class App extends React.Component {
 
         <Switch>
           <Route
+            path="/favorites"
+            render={routerProps => (
+              <div>
+                <Favorites
+                  logOutHandler={this.logoutHandler}
+                  user={this.state.user}
+                />
+              </div>
+            )}
+          />
+          <Route
             path="/storemap"
             render={routerProps => (
               <div>
@@ -141,7 +153,10 @@ class App extends React.Component {
             path="/about"
             render={routerProps => (
               <div>
-                <About />
+                <About
+                  logOutHandler={this.logoutHandler}
+                  user={this.state.user}
+                />
               </div>
             )}
           />
