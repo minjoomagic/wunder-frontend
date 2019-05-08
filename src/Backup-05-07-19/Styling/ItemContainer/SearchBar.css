@@ -1,0 +1,12 @@
+.search {
+  display: inline;
+  align-items: center;
+  width: auto;
+  max-width: 900px;
+}
+
+.search-bar {
+  width: 15em;
+  height: 3em;
+  max-width: 900px;
+}

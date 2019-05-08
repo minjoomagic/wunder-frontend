@@ -5,6 +5,7 @@ import "../../Styling/LandingPage/style.css";
 import logo from "../../Images/star.png";
 import { Link } from "react-router-dom";
 import { capitalize } from "../../Utilities/Utilities";
+import { Button } from "react-bootstrap";
 
 class NavBar extends React.Component {
   logOutHandler = () => {
@@ -35,9 +36,13 @@ class NavBar extends React.Component {
           </li>
           <li>
             {this.props.user ? (
-              <ul className="logout-btn" onClick={this.logOutHandler}>
+              <Button
+                className="logout-btn"
+                variant="danger"
+                onClick={this.logOutHandler}
+              >
                 LogOut
-              </ul>
+              </Button>
             ) : (
               <a href="/login" className="login-page">
                 LogIn

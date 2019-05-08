@@ -4,6 +4,8 @@ import { API_ROOT } from "../../Constants";
 import NewChatForm from "./NewChatForm";
 import MessagesArea from "./MessagesArea";
 import Cable from "./Cable";
+import "../../Styling/Chat/ChatsList.css";
+import { Image } from "react-bootstrap";
 
 class ChatsList extends React.Component {
   state = {
@@ -37,6 +39,10 @@ class ChatsList extends React.Component {
     this.setState({ chats });
   };
 
+  // deleteHandler = e => {
+  //   console.log("in handelr", e);
+  // };
+
   render = () => {
     const { chats, activeChat } = this.state;
     console.log("oin chats list USER:", this.props);
@@ -53,10 +59,26 @@ class ChatsList extends React.Component {
             handleReceivedMessage={this.handleReceivedMessage}
           />
         ) : null}
-        <h2>Chats</h2>
-        <ul>{mapChats(chats, this.handleClick, this.props.user)}</ul>
+        <div>
+          <h1>Chefs on Staff:</h1>
+          <br />
+          <br />
+          <Image src="https://i.imgur.com/OcwwDwM.png" roundedCircle />
+          <h3>Iron Chef Morimoto</h3>
+          <h4>Specialty: Japanese</h4>
+          <br />
+          <br />
+          <Image src="https://i.imgur.com/RB3CD1D.png" roundedCircle />
+          <h3>Iron Chef Batali</h3>
+          <h4>Specialty: Italian</h4>
+          <br />
+          <br />
+          <Image src="  https://i.imgur.com/sY26Rza.png" roundedCircle />
+          <h3>Iron Chef Bobby Flay</h3>
+          <h4>Specialty: Southwest</h4>
+        </div>
 
-        <NewChatForm user={this.props.user} />
+        <div>{mapChats(chats, this.handleClick, this.props.user)} </div>
 
         {activeChat && this.props.user ? (
           <MessagesArea
@@ -64,10 +86,19 @@ class ChatsList extends React.Component {
             chat={findActiveChat(chats, activeChat)}
           />
         ) : null}
+        {this.props.user.username === "robby" ? (
+          <NewChatForm user={this.props.user} />
+        ) : null}
       </div>
     );
   };
 }
+
+// <li className="chat-card">
+//   <button key={chat.id} onClick={() => handleClick(chat.id)}>
+//     Chat Room: {chat.title}
+//   </button>
+// </li>
 
 export default ChatsList;
 
@@ -80,9 +111,33 @@ const findActiveChat = (chats, activeChat) => {
 const mapChats = (chats, handleClick) => {
   return chats.map(chat => {
     return (
-      <li key={chat.id} onClick={() => handleClick(chat.id)}>
-        {chat.title}
-      </li>
+      <div
+        className="chat-box"
+        key={chat.id}
+        onClick={() => handleClick(chat.id)}
+      >
+        <div className="row">
+          <div className="item-grid">
+            <div className="item-image">
+              <a href="#">
+                <img
+                  className="picture-1"
+                  src="https://cdn.pixabay.com/photo/2016/11/30/18/14/chat-1873536_960_720.png"
+                />
+                <img
+                  className="picture-2"
+                  src="https://aavtech.site/wp-content/uploads/2018/10/Message2Artboard-2-360x240.png"
+                />
+              </a>
+              <div className="item-content">
+                <h3 className="title">
+                  <p>{chat.title}</p>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   });
 };

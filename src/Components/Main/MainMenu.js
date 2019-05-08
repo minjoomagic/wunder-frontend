@@ -124,7 +124,7 @@ class MainMenu extends React.Component {
             </div>
 
             <div className="col-md-3">
-              {this.state.user ? (
+              {localStorage.token ? (
                 <MainMenuCard
                   image={image2}
                   title="Browse Our Recipes"
@@ -144,7 +144,7 @@ class MainMenu extends React.Component {
               )}
             </div>
             <div className="col-md-3">
-              {this.state.user ? (
+              {localStorage.token ? (
                 <MainMenuCard
                   image={image3}
                   title="Chef Connect"

@@ -1,0 +1,104 @@
+.chattybox {
+  margin: 1rem;
+  /* display: inline-grid; */
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 450px); */
+  grid-gap: 1rem 1rem;
+  align-items: stretch;
+  background-color: #ffffff;
+  /* font-family: "Pacifico", cursive; */
+}
+
+.chat-card {
+  text-align: center;
+  /* border: grey solid 1px; */
+  padding: 1rem;
+  width: 15rem;
+  height: 29rem;
+  display: inline-grid;
+  grid-gap: 10px;
+  margin: auto;
+  /* box-shadow: 3px 4px #171414; */
+  display: block;
+  max-width: 300px;
+  max-height: 430px;
+  width: auto;
+  height: 430px;
+  /* opacity: 0.8; */
+}
+
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Messages-message.currentMember {
+  /*justify-content: flex-end;*/
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.Message-content {
+  display: inline-block;
+}
+
+.currentMember > .Message-content {
+  align-items: flex-end;
+}
+
+.Messages-message > .avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px -10px;
+}
+
+.Message-content > .username {
+  display: block;
+  color: gray;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+
+.Message-content {
+  padding: 10px;
+  max-width: 400px;
+  margin: 0;
+  border-radius: 12px;
+  background-color: cornflowerblue;
+  color: white;
+  display: inline-block;
+}
+
+.currentMember > .Message-content .text {
+  background-color: orangered;
+}
+
+/* form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid orangered;
+  flex-grow: 1;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
+} */
