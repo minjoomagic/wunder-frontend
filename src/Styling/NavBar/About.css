@@ -19,17 +19,6 @@
   font-family: "Oswald", sans-serif;
 }
 
-/* .title {
-  font-family: "Pacifico", cursive;
-  color: #fb7a00;
-  line-height: 1.4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-} */
-
 .container2 {
   max-width: 960px;
   margin: auto;
@@ -55,7 +44,7 @@
   content: "";
   background: url("../../Images/laptop.jpeg") no-repeat center center/cover;
   position: absolute;
-  background-size: contain;
+  background-size: stretch;
   top: 0;
   left: 0;
   width: 100%;

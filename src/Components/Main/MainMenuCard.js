@@ -15,6 +15,7 @@ const MainMenuCard = props => {
         <h3 className="card-title">{props.title}</h3>
         <p className="card-text text-secondary">{props.description}</p>
         <h1 className="alert">{props.alert}</h1>
+
         <Link to={`${props.link}`}>
           <p className="btn btn-outline-dark">{props.buttonInfo}</p>
         </Link>

@@ -1,5 +1,7 @@
 import React from "react";
 import { API_ROOT, HEADERS } from "../../Constants";
+import { Button } from "react-bootstrap";
+import "../../Styling/Chat/MessagesArea.css";
 
 class NewMessageForm extends React.Component {
   state = {
@@ -34,11 +36,14 @@ class NewMessageForm extends React.Component {
           <label>New Message:</label>
           <br />
           <input
+            className="chat-input"
             type="text"
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <input type="submit" />
+          <Button className="msg-button" type="submit">
+            Send
+          </Button>
         </form>
       </div>
     );

@@ -41,7 +41,7 @@ class ItemCard extends React.Component {
                       <img className="picture-1" src={image_url} />
                       <img
                         className="picture-2"
-                        src="https://cdn.shopify.com/s/files/1/1071/7482/t/10/assets/logo.png?1"
+                        src="https://i.imgur.com/moNVObQ.png "
                       />
                     </a>
                   </Link>

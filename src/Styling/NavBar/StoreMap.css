@@ -8,3 +8,13 @@
   max-height: 1000px;
   max-width: 900px;
 }
+
+.store-here {
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 300px;
+  position: absolute;
+  bottom: 19em;
+  right: 33em;
+}

@@ -131,7 +131,7 @@ const mapChats = (chats, handleClick) => {
               </a>
               <div className="item-content">
                 <h3 className="title">
-                  <p>{chat.title}</p>
+                  <p>Chat Room: {chat.title}</p>
                 </h3>
               </div>
             </div>
