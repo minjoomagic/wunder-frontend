@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FavItems from "./FavItems";
-// import UserPurchases from "./ProfileComponents/UserPurchases";
 
 import "../../Styling/NavBar/Favorites.css";
 

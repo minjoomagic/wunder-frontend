@@ -13,7 +13,6 @@
   max-height: 400px;
   width: auto;
   height: auto;
-  /* display: inline-grid; */
   grid-gap: 10px;
   margin: 1rem -15rem 1rem 5rem;
   box-shadow: 3px 4px #171414;
@@ -23,15 +22,11 @@
 .item-container {
   margin: auto;
   display: relative;
-  /* display: grid; */
-  /* grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px; */
   width: auto;
   height: auto;
 }
 
 .fa-info-circle {
-  /* opacity: 0.8; */
   max-width: 200px;
   max-height: 200px;
   width: auto;

@@ -2,7 +2,6 @@
   display: flex;
   border-width: 2px;
   border-style: inset;
-  /* border-color: orange; */
 }
 
 .left-side {
@@ -11,7 +10,6 @@
   flex-direction: column;
   border-width: 2px;
   border-style: inset;
-  /* border-color: red; */
 }
 
 .right-side {
@@ -20,7 +18,6 @@
   height: 100vh;
   top: 0;
   position: sticky;
-  /* border-color: blue; */
   border-width: 2px;
   border-style: inset;
 }

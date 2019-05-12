@@ -1,5 +1,5 @@
 import React from "react";
-import { API_ROOT, HEADERS } from "../../Constants";
+import { API_ROOT, HEADERS, HEADERS_SPECIAL } from "../../Constants";
 import { Button } from "react-bootstrap";
 import "../../Styling/Chat/MessagesArea.css";
 
@@ -29,7 +29,19 @@ class NewMessageForm extends React.Component {
     this.setState({ text: "" });
   };
 
+  handleSMS = e => {
+    e.preventDefault();
+
+    fetch(`${API_ROOT}/messages`, {
+      method: "POST",
+      headers: HEADERS_SPECIAL,
+      body: JSON.stringify(this.state)
+    });
+    this.setState({ text: "" });
+  };
+
   render = () => {
+    console.log("what is my user???", this.props.user);
     return (
       <div className="newMessageForm">
         <form onSubmit={this.handleSubmit}>
@@ -44,6 +56,46 @@ class NewMessageForm extends React.Component {
           <Button className="msg-button" type="submit">
             Send
           </Button>
+          {this.props.user.username === "robby" ? (
+            <Button
+              className="sms-button"
+              variant="info"
+              type="submit"
+              onClick={this.handleSMS}
+            >
+              SMS
+            </Button>
+          ) : null}
+          {this.props.user.username === "bobby" ? (
+            <Button
+              className="sms-button"
+              variant="info"
+              type="submit"
+              onClick={this.handleSMS}
+            >
+              SMS
+            </Button>
+          ) : null}
+          {this.props.user.username === "morimoto" ? (
+            <Button
+              className="sms-button"
+              variant="info"
+              type="submit"
+              onClick={this.handleSMS}
+            >
+              SMS
+            </Button>
+          ) : null}
+          {this.props.user.username === "batali" ? (
+            <Button
+              className="sms-button"
+              variant="info"
+              type="submit"
+              onClick={this.handleSMS}
+            >
+              SMS
+            </Button>
+          ) : null}
         </form>
       </div>
     );

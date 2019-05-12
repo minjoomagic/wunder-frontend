@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { capitalize } from "../../../Utilities/Utilities";
 import { Button, Card } from "react-bootstrap";
-
-// import "../../../Styling/ItemContainer/ShowPage/ItemShow.css";
 import "../../../Styling/ItemContainer/ItemCard.css";
 
 const ItemShow = props => {
@@ -55,15 +53,5 @@ const ItemShow = props => {
     </Card>
   );
 };
-
-// const Filter = (props) => {
-//   return(
-//     <div>
-//       This is Filter
-//       And <SearchBar submitHandler={props.submitHandler}/>
-//       And <CategoryFilter categories={props.categories} selectHandler={props.selectHandler}/>
-//     </div>
-//   )
-// }
 
 export default ItemShow;

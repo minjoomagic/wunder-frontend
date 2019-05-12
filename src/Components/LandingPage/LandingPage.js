@@ -9,7 +9,6 @@ class LandingPage extends React.Component {
     TweenMax.from(".landing-title", 1, {
       down: 10,
       padding: 20,
-
       y: -10,
       opacity: 0,
       delay: 0.5
@@ -17,7 +16,6 @@ class LandingPage extends React.Component {
     TweenMax.to(".landing-title", 1, {
       down: 10,
       padding: 20,
-
       y: -10,
       opacity: 0,
       delay: 2
@@ -58,8 +56,7 @@ class LandingPage extends React.Component {
       right: 50,
       x: -50,
       opacity: 1,
-      delay: 12
-      // ease: Bounce.easeOut
+      delay: 12.5
     });
 
     return (

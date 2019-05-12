@@ -4,7 +4,6 @@ import { Image, Spinner } from "react-bootstrap";
 
 class ItemMap extends React.Component {
   render() {
-    // <i className="fas fa-map-pin fa-2x" />
     return (
       <div className="item-map">
         <img className="map-image" src="https://i.imgur.com/P34xHmP.jpg" />
@@ -24,6 +23,3 @@ class ItemMap extends React.Component {
 }
 
 export default ItemMap;
-
-// something like       <h1 className={this.props.aisle}>o</h1> className={this.props.item.item.store_items[0].location}>o</h1>
-// Then in css file you would make like redux case stmts for every aisle possibility 1-10

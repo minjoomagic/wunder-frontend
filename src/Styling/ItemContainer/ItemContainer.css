@@ -1,10 +1,7 @@
 .item-collection {
   margin: 1rem;
-  /* display: inline-grid; */
-  /* display: flex; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* grid-template-rows: repeat(3, 450px); */
   grid-gap: 1rem 1rem;
   align-items: stretch;
   background-color: #ffffff;

@@ -4,7 +4,6 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import Signup from "./Components//LogIn-SignUp/SignUp";
 import Login from "./Components//LogIn-SignUp/LogIn";
 import NavBar from "./Components//NavBar/NavBar";
-// import Main from "./Components//Main/Main";
 import ItemContainer from "./Components/ItemContainer/ItemContainer";
 import MainMenu from "./Components/Main/MainMenu";
 import StoreMap from "./Components/NavBar/StoreMap";
@@ -97,22 +96,6 @@ class App extends React.Component {
     this.props.history.push("/");
     this.setState({ user: null });
   };
-
-  // <Route
-  //   path="/items/:id"
-  //   render={routerProps => {
-  //     let id = parseInt(routerProps.match.params.id);
-  //     // console.log("items are:", this.props.items)
-  //     let item = this.props.items.find(item => item.id === id);
-  //     return <ShowPage item={item} />;
-  //   }}
-  // />
-  // <Route
-  //   path="/items"
-  //   render={() => {
-  //     return <div className="item-collection">{items}</div>;
-  //   }}
-  // />
 
   render() {
     console.log("logOutHandler", this.logOutHandler);

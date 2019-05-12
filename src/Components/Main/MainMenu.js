@@ -29,8 +29,6 @@ class MainMenu extends React.Component {
     console.log("Main did mount");
     this.setState({ user: this.props.user });
     this.fetchItems();
-    // this.fetchRecipes();
-    // this.fetchCategories();
   }
 
   // ----------------- Fetch Items ---------------------

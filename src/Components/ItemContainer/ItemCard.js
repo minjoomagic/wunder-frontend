@@ -25,10 +25,6 @@ class ItemCard extends React.Component {
       sold_by
     } = this.props.item;
 
-    // https://i.imgur.com/moNVObQ.png Whole foods logo
-    // https://i.imgur.com/nlpuKqF.png Wunder logo
-    // https://cdn.shopify.com/s/files/1/1071/7482/t/10/assets/logo.png?1 H&Y LOGO
-
     return (
       <React.Fragment>
         <div className="container">
@@ -45,7 +41,7 @@ class ItemCard extends React.Component {
                       />
                     </a>
                   </Link>
-                  <ul className="social">
+                  <ul className="qview">
                     <li>
                       <Link to={`/main/items/${this.props.item.id}`}>
                         <a href="#" data-tip="Quick View">

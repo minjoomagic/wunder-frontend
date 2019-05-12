@@ -1,12 +1,9 @@
 .chat-input {
   height: 2.5em;
   width: 12em;
-  /* font-size: 4em; */
 }
 
 .messagesArea {
-  /* display: grid; */
-  /* flex-wrap: wrap; */
   width: 30em;
   height: 40em;
   align-content: flex;
@@ -17,11 +14,6 @@
   overflow: scroll;
   margin-top: 3em;
 }
-
-/* .msg-button {
-  height: 2em;
-  text-align: center;
-} */
 
 .dot-me {
   height: 25px;
@@ -42,48 +34,35 @@
 }
 
 .username-me {
-  /* display: block; */
   padding-right: 1em;
   text-align: right;
   color: gray;
   font-size: 15px;
-  /* padding-bottom: 4px; */
 }
 
 .username-guest {
-  /* display: block; */
   padding-left: 1em;
   text-align: left;
   color: gray;
   font-size: 15px;
-  /* padding-bottom: 4px; */
 }
 
 .msg-me {
   padding-right: 0.5em;
   padding-left: 0.5em;
-  /* align-items: flex-end;
-  flex-direction: row-reverse; */
   text-align: right;
   border-radius: 5px;
-  /* margin: 0; */
   margin-left: 12em;
-  /* margin-right: 3em; */
-  /* max-width: -200px; */
   background-color: cornflowerblue;
   color: white;
-
   display: inline-grid;
 }
 
 .msg-guest {
   padding-left: 0.5em;
   padding-right: 0.5em;
-  /* align-items: flex-end;
-  flex-direction: row-reverse; */
   text-align: left;
   border-radius: 5px;
-  /* margin: 0; */
   margin-right: 12em;
   background-color: #ed741c;
   color: white;

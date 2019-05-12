@@ -14,74 +14,23 @@ class About extends React.Component {
   render() {
     TweenMax.from(".description", 5, {
       left: 800,
-      // backgroundColor: "#ffffff",
-      // padding: 20,
       borderColor: "white",
       borderRadius: 26,
       x: 800,
       opacity: 0
-      // delay: 9,
-      // ease: Bounce.easeOut
     });
     TweenMax.from(".about-title", 5, {
       up: 100,
-      // backgroundColor: "#ffffff",
-      // padding: 20,
-      // borderColor: "white",
-      // borderRadius: 26,
       y: 100,
       opacity: 0
-      // delay: 9,
-      // ease: Bounce.easeOut
     });
 
     TweenMax.from(".about-name", 5, {
       down: 900,
-      // backgroundColor: "#ffffff",
-      // padding: 20,
-      // borderColor: "white",
-      // borderRadius: 26,
       y: 100,
       opacity: 0,
       delay: 4
-      // ease: Bounce.easeOut
     });
-
-    // TweenMax.to(".description", 4, {
-    //   right: 900,
-    //   // backgroundColor: "#f00",
-    //   padding: 20,
-    //   borderColor: "white",
-    //   borderRadius: 26,
-    //   x: -900,
-    //   opacity: 1,
-    //   delay: 3
-    //   // ease: Bounce.easeOut
-    // });
-    // TweenMax.to(".description", 4, {
-    //   left: 0,
-    //   // backgroundColor: "#f00",
-    //   padding: 20,
-    //   borderColor: "white",
-    //   borderRadius: 26,
-    //   x: 0,
-    //   opacity: 1,
-    //   delay: 7
-    //   // ease: Bounce.easeOut
-    // });
-
-    // <button
-    //   className="landingPage-btn"
-    //   onClick={this.clickContactHandler}
-    // >
-    //   Contact INFO
-    // </button>
-    // {this.state.clicked ? (
-    //   <h3>
-    //     <br />
-    //     Wunderfully created by: Robert Han
-    //   </h3>
-    // ) : null}
 
     return (
       <div className="about-body">

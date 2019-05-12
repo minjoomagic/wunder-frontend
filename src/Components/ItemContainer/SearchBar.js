@@ -21,7 +21,6 @@ class SearchBar extends React.Component {
     );
 
     console.log("changing?????", e.target.value);
-    // console.log(e.target.value);
   };
 
   onClickHandler = e => {

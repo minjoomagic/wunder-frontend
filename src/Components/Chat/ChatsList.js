@@ -5,7 +5,7 @@ import NewChatForm from "./NewChatForm";
 import MessagesArea from "./MessagesArea";
 import Cable from "./Cable";
 import "../../Styling/Chat/ChatsList.css";
-import { Image } from "react-bootstrap";
+import { Image, Button } from "react-bootstrap";
 
 class ChatsList extends React.Component {
   state = {
@@ -42,11 +42,17 @@ class ChatsList extends React.Component {
   // deleteHandler = e => {
   //   console.log("in handelr", e);
   // };
+  //
+  // <Image src="https://i.imgur.com/RB3CD1D.png" roundedCircle />
+  // <h3>Iron Chef Batali</h3>
+  // <h4>Specialty: Italian</h4>
+  // <br />
+  // <br />
 
   render = () => {
     const { chats, activeChat } = this.state;
-    console.log("oin chats list USER:", this.props);
-    // -------------------so weird that line 43 classname and line 55 chats if same name then double results-----
+    console.log("in chats list USER:", this.props);
+    // -------------------so weird that line 57 classname and line 111 chats if same name then double results-----
     return (
       <div className="chattybox">
         <ActionCableConsumer
@@ -63,19 +69,16 @@ class ChatsList extends React.Component {
           <h1>Chefs on Staff:</h1>
           <br />
           <br />
-          <Image src="https://i.imgur.com/OcwwDwM.png" roundedCircle />
-          <h3>Iron Chef Morimoto</h3>
-          <h4>Specialty: Japanese</h4>
-          <br />
-          <br />
-          <Image src="https://i.imgur.com/RB3CD1D.png" roundedCircle />
-          <h3>Iron Chef Batali</h3>
-          <h4>Specialty: Italian</h4>
-          <br />
-          <br />
           <Image src="  https://i.imgur.com/sY26Rza.png" roundedCircle />
           <h3>Iron Chef Bobby Flay</h3>
           <h4>Specialty: Southwest</h4>
+
+          <br />
+          <br />
+
+          <Image src="https://i.imgur.com/zxqx6Rq.png" roundedCircle />
+          <h3>Iron Chef Morimoto</h3>
+          <h4>Specialty: Japanese</h4>
         </div>
 
         <div>{mapChats(chats, this.handleClick, this.props.user)} </div>
@@ -94,12 +97,6 @@ class ChatsList extends React.Component {
   };
 }
 
-// <li className="chat-card">
-//   <button key={chat.id} onClick={() => handleClick(chat.id)}>
-//     Chat Room: {chat.title}
-//   </button>
-// </li>
-
 export default ChatsList;
 
 // helpers
@@ -111,29 +108,43 @@ const findActiveChat = (chats, activeChat) => {
 const mapChats = (chats, handleClick) => {
   return chats.map(chat => {
     return (
-      <div
-        className="chat-box"
-        key={chat.id}
-        onClick={() => handleClick(chat.id)}
-      >
+      <div className="chat-box">
         <div className="row">
           <div className="item-grid">
-            <div className="item-image">
-              <a href="#">
-                <img
-                  className="picture-1"
-                  src="https://cdn.pixabay.com/photo/2016/11/30/18/14/chat-1873536_960_720.png"
-                />
-                <img
-                  className="picture-2"
-                  src="https://aavtech.site/wp-content/uploads/2018/10/Message2Artboard-2-360x240.png"
-                />
-              </a>
-              <div className="item-content">
-                <h3 className="title">
-                  <p>Chat Room: {chat.title}</p>
-                </h3>
+            <div className="itm-image">
+              <div>
+                <br />
+                <br />
+                <div>
+                  <br />
+                  <div />
+                  <br />
+                  <div
+                    className="live"
+                    key={chat.id}
+                    onClick={() => handleClick(chat.id)}
+                  >
+                    <Button
+                      key={chat.id}
+                      onClick={() => handleClick(chat.id)}
+                      variant="secondary"
+                    >
+                      Live: Chef {chat.title}
+                    </Button>
+                  </div>
+                  <a href="#">
+                    <img className="picture-2" />
+                  </a>
+                  <div />
+                  <br />
+                  <div />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                </div>
               </div>
+              <div className="item-content" />
             </div>
           </div>
         </div>
